@@ -1,4 +1,4 @@
-package entities;
+package robotProgram.entities;
 
 public class Robot {
     //robot object - faces direction that user inputs
@@ -25,6 +25,6 @@ public class Robot {
     //break string into array of chars
     //match char to a command with enum
     //method to turn when L or R are input - match to direction with enum
-    //if x or y becomes 0, return an error to user - bot escaped the grid!
+    //if x or y becomes <0, return an error to user - bot escaped the grid!
     //where am I now? return position and direction to user when sequence complete
 }
