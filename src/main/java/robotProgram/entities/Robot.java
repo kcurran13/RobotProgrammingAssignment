@@ -1,4 +1,4 @@
-package entities;
+package robotProgram.entities;
 
 public class Robot {
     //robot object - faces direction that user inputs

@@ -1,4 +1,4 @@
-package robot;
+package robotProgram;
 
 public class RobotController {
     //kick off program here
