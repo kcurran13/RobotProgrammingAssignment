@@ -73,7 +73,7 @@ public class Robot {
     }
 
     public String whereAmI() {
-        String robotStats = String.format("The robot ended up at %d %d and is facing %s.", getX(), getY(), getDirection());
+        String robotStats = String.format("Success! The robot ended up at %d %d and is facing %s.", getX(), getY(), getDirection());
         return robotStats;
     }
 
@@ -93,9 +93,7 @@ public class Robot {
         this.direction = direction;
     }
 
-    public void setX(int x) {
-        this.x = x;
-    }
+    public void setX(int x) { this.x = x; }
 
     public void setY(int y) {
         this.y = y;

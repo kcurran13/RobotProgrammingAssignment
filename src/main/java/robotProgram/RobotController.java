@@ -10,7 +10,6 @@ import robotProgram.steering.Command;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 
 public class RobotController {
 
@@ -19,8 +18,8 @@ public class RobotController {
     private BufferedReader reader;
     private boolean gridExists = false;
     private boolean robotExists = false;
-    private boolean robotMoving = true;
-    private boolean unsuccessfulMove = false;
+    private boolean hasRobotMoved = false;
+    private boolean isUnsuccessfulMove = false;
 
     public RobotController() {
         this.reader = new BufferedReader(new InputStreamReader(System.in));
@@ -85,10 +84,9 @@ public class RobotController {
     }
 
     private void moveRobot() {
-        while (robotMoving) {
+        while (!hasRobotMoved) {
             System.out.println("\nTime to move the robot! Enter R to turn right, L to turn left, or F to move forward.");
 
-            // Add each character of user input as a value in an array
             char[] movementCommands = new char[0];
             try {
                 String input = this.reader.readLine().trim().toUpperCase();
@@ -98,7 +96,7 @@ public class RobotController {
             }
 
             for (char input : movementCommands) {
-                unsuccessfulMove = false;
+                isUnsuccessfulMove = false;
                 if (Command.getCommandFromChar(input) != null) {
                     switch (Command.getCommandFromChar(input)) {
                         case RIGHT:
@@ -112,22 +110,21 @@ public class RobotController {
                             if (ValidationHandler.validateNewPosition(newPosition, this.grid)) {
                                 robot.moveToPosition(newPosition[0], newPosition[1]);
                             } else {
-                                System.out.println("The robot had an accident!");
-                                robotMoving = false;
-                                unsuccessfulMove = true;
+                                System.out.printf("Oh no! The robot had an accident facing %s at %d %d!\n", robot.getDirection(), robot.getX(), robot.getY());
+                                isUnsuccessfulMove = true;
                             }
                             break;
                         default:
-                            System.out.println("default, what to do?");
+                            throw new IllegalArgumentException("Exception in robot move loop.");
                     }
                 } else {
                     System.out.printf("\n%s is not a valid movement command!", input);
-                    unsuccessfulMove = true;
+                    isUnsuccessfulMove = true;
                 }
             }
-            if (!unsuccessfulMove) {
+            if (!isUnsuccessfulMove) {
                 System.out.println(robot.whereAmI());
-                robotMoving = false;
+                hasRobotMoved = true;
             }
         }
     }
