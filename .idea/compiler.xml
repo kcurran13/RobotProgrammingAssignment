@@ -9,8 +9,5 @@
         <module name="RobotProgrammingAssignment" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="RobotProgrammingAssignment" target="1.5" />
-    </bytecodeTargetLevel>
   </component>
 </project>
