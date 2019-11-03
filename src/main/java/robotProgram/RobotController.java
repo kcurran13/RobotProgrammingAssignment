@@ -18,6 +18,8 @@ public class RobotController {
     private BufferedReader reader;
     private boolean gridExists = false;
     private boolean robotExists = false;
+    private boolean robotMoving = true;
+    private boolean unsuccessfulMove = false;
 
     public RobotController() {
         this.reader = new BufferedReader(new InputStreamReader(System.in));
@@ -64,7 +66,7 @@ public class RobotController {
         int[] robotPosition = null;
         Character direction = null;
 
-        System.out.println("\nSubmit robot starting position, followed by the cardinal direction it should face - N, S, E, W. " +
+        System.out.println("\nSubmit the robot's starting position, followed by the cardinal direction it should face - N, S, E, W. " +
                 "\nEnter two numbers and then the direction, for example 1 2 N, separated by a space.");
 
         while (!robotExists) {
@@ -91,7 +93,7 @@ public class RobotController {
             robot = new Robot(robotPosition[0], robotPosition[1], direction);
             robotExists = true;
         } else {
-            System.out.println("Invalid position");
+            System.out.println("Invalid position. Make sure the robot is positioned within the grid.");
         }
     }
 
@@ -101,42 +103,52 @@ public class RobotController {
     }
 
     private void moveRobot() {
-        System.out.println("ready to move!");
-        System.out.println("\nTime to move the robot! Enter R to turn right, L to turn left, or F to move forward.");
+        while (robotMoving) {
+            System.out.println("\nTime to move the robot! Enter R to turn right, L to turn left, or F to move forward.");
 
-        // Adds each character of the input as a value in an array
-        char[] movementCommands = new char[0];
-        try {
-            String input = this.reader.readLine().trim();
-            movementCommands = input.toCharArray();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+            // Add each character of user input as a value in an array
+            char[] movementCommands = new char[0];
+            try {
+                String input = this.reader.readLine().trim();
+                movementCommands = input.toCharArray();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
-        for (char input : movementCommands) {
-            //validation of input
-            if (Command.getCommandFromChar(input) != null) {
-                switch (Command.getCommandFromChar(input)) {
-                    case RIGHT:
-                        robot.turn(Command.RIGHT);
-                        break;
-                    case LEFT:
-                        robot.turn(Command.LEFT);
-                        break;
-                    case FORWARD:
-                        int[] newPosition = robot.tryNewPosition();
-                        if (checkValidNewPosition(newPosition)) {
-                            robot.moveToPosition(newPosition[0], newPosition[1]);
-                        } else {
-                            System.out.println("The robot had an accident!");
-                        }
-                        break;
-                    default:
-                        System.out.println("default, what to do?");
+            for (char input : movementCommands) {
+                unsuccessfulMove = false;
+                //validation of input
+                if (Command.getCommandFromChar(input) != null) {
+                    switch (Command.getCommandFromChar(input)) {
+                        case RIGHT:
+                            robot.turn(Command.RIGHT);
+                            break;
+                        case LEFT:
+                            robot.turn(Command.LEFT);
+                            break;
+                        case FORWARD:
+                            int[] newPosition = robot.tryNewPosition();
+                            if (checkValidNewPosition(newPosition)) {
+                                robot.moveToPosition(newPosition[0], newPosition[1]);
+                            } else {
+                                System.out.println("The robot had an accident!");
+                                robotMoving = false;
+                            }
+                            break;
+                        default:
+                            System.out.println("default, what to do?");
+                    }
+                } else {
+                    System.out.printf("\n%s is not a valid movement command!", input);
+                    unsuccessfulMove = true;
                 }
-            } else {
-                System.out.printf("Invalid input.");
+            }
+            if(!unsuccessfulMove) {
+                System.out.println("in here now");
+                System.out.println(robot.whereAmI());
+                robotMoving = false;
             }
         }
+
     }
 }
