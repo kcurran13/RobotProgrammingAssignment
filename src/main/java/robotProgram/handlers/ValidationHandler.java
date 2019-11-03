@@ -25,7 +25,9 @@ public class ValidationHandler {
         Robot robot = null;
         int[] robotPosition = Arrays.stream(userInput).filter(s -> s.matches("[\\d+]{1,9}")).mapToInt(Integer::parseInt).toArray();
 
-        if (robotPosition[0] < grid.getWidth() && robotPosition[0] >= 0 && robotPosition[1] < grid.getHeight() && robotPosition[1] >= 0) {
+        if (robotPosition.length == 2
+                && robotPosition[0] < grid.getWidth() && robotPosition[0] >= 0
+                && robotPosition[1] < grid.getHeight() && robotPosition[1] >= 0) {
             robot = new Robot(robotPosition[0], robotPosition[1], direction);
         } else {
             System.out.println("Invalid position. Make sure the robot is positioned within the grid.");
