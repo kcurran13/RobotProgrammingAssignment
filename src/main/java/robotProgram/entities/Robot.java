@@ -20,7 +20,7 @@ public class Robot {
         this.x = inputX;
         this.y = inputY;
         this.direction = inputDir;
-        System.out.println("robot created!" + x + " " + y + " " + direction);
+        System.out.printf("Robot created at %d %d facing %s.", this.x, this.y, this.direction);
     }
 
     public void turn(Command turn) {
