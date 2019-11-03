@@ -1,15 +1,11 @@
 package robotProgram.entities;
 
-import org.w3c.dom.ls.LSOutput;
 import robotProgram.steering.CardinalDirection;
 import robotProgram.steering.Command;
 
 import static robotProgram.steering.CardinalDirection.*;
 
 public class Robot {
-    //robot object - faces direction that user inputs
-    //he needs to move F and also rotate L and R
-    //robot tells user where it ends up on the grid and what direction it faces (cardinal directions)
 
     private CardinalDirection direction;
     private int x;
@@ -29,22 +25,21 @@ public class Robot {
     }
 
     public void turn(Command turn) {
-        //logic for turning robot
-        switch(getDirection()) {
+        switch (getDirection()) {
             case NORTH:
-                if(turn == Command.RIGHT) setDirection(EAST);
+                if (turn == Command.RIGHT) setDirection(EAST);
                 else setDirection(WEST);
                 break;
             case EAST:
-                if(turn == Command.RIGHT) setDirection(SOUTH);
+                if (turn == Command.RIGHT) setDirection(SOUTH);
                 else setDirection(NORTH);
                 break;
             case SOUTH:
-                if(turn == Command.RIGHT) setDirection(WEST);
+                if (turn == Command.RIGHT) setDirection(WEST);
                 else setDirection(EAST);
                 break;
             case WEST:
-                if(turn == Command.RIGHT) setDirection(NORTH);
+                if (turn == Command.RIGHT) setDirection(NORTH);
                 else setDirection(SOUTH);
                 break;
         }
@@ -106,12 +101,4 @@ public class Robot {
     public void setY(int y) {
         this.y = y;
     }
-
-
-    //receive string of commands
-    //break string into array of chars
-    //match char to a command with enum
-    //method to turn when L or R are input - match to direction with enum
-    //if x or y becomes <0, return an error to user - bot escaped the grid!
-    //where am I now? return position and direction to user when sequence complete
 }
