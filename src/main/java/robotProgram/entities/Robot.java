@@ -2,7 +2,6 @@ package robotProgram.entities;
 
 import robotProgram.steering.CardinalDirection;
 import robotProgram.steering.Command;
-
 import static robotProgram.steering.CardinalDirection.*;
 
 public class Robot {

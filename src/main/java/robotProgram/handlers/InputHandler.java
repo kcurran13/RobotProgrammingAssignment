@@ -8,19 +8,9 @@ public class InputHandler {
      * Take in user array, trim it, split on whitespace.
      *
      * @param reader buffered reader to receive input
-     * @return array with grid dimensions
+     * @return array of user input split on whitespace
      */
-    public static String[] handleGridInput(BufferedReader reader) {
-        String[] userInput = null;
-        try {
-            userInput = reader.readLine().trim().split("\\s+");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return userInput;
-    }
-
-    public static String[] handleRobotInput(BufferedReader reader) {
+    public static String[] handleInput(BufferedReader reader) {
         String[] userInput = null;
         try {
             userInput = reader.readLine().trim().split("\\s+");
