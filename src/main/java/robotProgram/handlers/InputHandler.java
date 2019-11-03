@@ -4,11 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 
 public class InputHandler {
-    //handles and validates user input grid dimensions and robot direction
-
     /**
      * Take in user array, trim it, split on whitespace.
-     * Validate the input and then add to an array.
      *
      * @param reader buffered reader to receive input
      * @return array with grid dimensions

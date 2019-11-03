@@ -88,20 +88,6 @@ public class RobotController {
         }
     }
 
-    private void validateRobotStartPos(int[] robotPosition, CardinalDirection direction) {
-        if (robotPosition[0] < grid.getWidth() && robotPosition[0] >= 0 && robotPosition[1] < grid.getHeight() && robotPosition[1] >= 0) {
-            robot = new Robot(robotPosition[0], robotPosition[1], direction);
-            robotExists = true;
-        } else {
-            System.out.println("Invalid position. Make sure the robot is positioned within the grid.");
-        }
-    }
-
-    private boolean checkValidNewPosition(int[] robotPos) {
-        //check if new position is valid
-        return true;
-    }
-
     private void moveRobot() {
         while (robotMoving) {
             System.out.println("\nTime to move the robot! Enter R to turn right, L to turn left, or F to move forward.");
@@ -133,6 +119,7 @@ public class RobotController {
                             } else {
                                 System.out.println("The robot had an accident!");
                                 robotMoving = false;
+                                unsuccessfulMove = true;
                             }
                             break;
                         default:
@@ -143,12 +130,28 @@ public class RobotController {
                     unsuccessfulMove = true;
                 }
             }
-            if(!unsuccessfulMove) {
-                System.out.println("in here now");
+            if (!unsuccessfulMove) {
                 System.out.println(robot.whereAmI());
                 robotMoving = false;
             }
         }
+    }
 
+    private void validateRobotStartPos(int[] robotPosition, CardinalDirection direction) {
+        if (robotPosition[0] < grid.getWidth() && robotPosition[0] >= 0 && robotPosition[1] < grid.getHeight() && robotPosition[1] >= 0) {
+            robot = new Robot(robotPosition[0], robotPosition[1], direction);
+            robotExists = true;
+        } else {
+            System.out.println("Invalid position. Make sure the robot is positioned within the grid.");
+        }
+    }
+
+    private boolean checkValidNewPosition(int[] robotPos) {
+        if (robotPos[0] < grid.getWidth() && robotPos[0] >= 0 && robotPos[1] < grid.getHeight() && robotPos[1] >= 0) {
+            return true;
+        } else {
+            System.out.println("Invalid position. Make sure the robot is positioned within the grid.");
+            return false;
+        }
     }
 }

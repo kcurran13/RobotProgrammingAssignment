@@ -29,6 +29,25 @@ public class Robot {
     }
 
     public void turn(Command turn) {
+        //logic for turning robot
+        switch(getDirection()) {
+            case NORTH:
+                if(turn == Command.RIGHT) setDirection(EAST);
+                else setDirection(WEST);
+                break;
+            case EAST:
+                if(turn == Command.RIGHT) setDirection(SOUTH);
+                else setDirection(NORTH);
+                break;
+            case SOUTH:
+                if(turn == Command.RIGHT) setDirection(WEST);
+                else setDirection(EAST);
+                break;
+            case WEST:
+                if(turn == Command.RIGHT) setDirection(NORTH);
+                else setDirection(SOUTH);
+                break;
+        }
     }
 
     public int[] tryNewPosition() {
@@ -49,7 +68,7 @@ public class Robot {
                 newX--;
                 break;
             default:
-                System.out.println("Problem in movetonewposition switch");
+                System.out.println("Problem in moveToNewPosition switch");
         }
         return new int[]{newX, newY};
     }
