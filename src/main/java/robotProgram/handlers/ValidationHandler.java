@@ -32,4 +32,13 @@ public class ValidationHandler {
         }
         return robot;
     }
+
+    public static boolean validateNewPosition(int[] robotPos, Grid grid) {
+        if (robotPos[0] < grid.getWidth() && robotPos[0] >= 0 && robotPos[1] < grid.getHeight() && robotPos[1] >= 0) {
+            return true;
+        } else {
+            System.out.println("Invalid position. Make sure the robot is positioned within the grid.");
+            return false;
+        }
+    }
 }

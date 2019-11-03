@@ -6,8 +6,6 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/robotProgram/handlers/ValidationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robotProgram/handlers/ValidationHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/robotProgram/RobotController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/robotProgram/RobotController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/robotProgram/RobotController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/robotProgram/RobotController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/robotProgram/handlers/InputHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/robotProgram/handlers/InputHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/RobotTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/RobotTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -129,7 +127,7 @@
       <option name="presentableId" value="Default" />
       <updated>1572693493984</updated>
       <workItem from="1572693497052" duration="2742000" />
-      <workItem from="1572696252035" duration="22085000" />
+      <workItem from="1572696252035" duration="22340000" />
     </task>
     <servers />
   </component>
