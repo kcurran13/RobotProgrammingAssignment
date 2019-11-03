@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="93fe05c5-51a4-4820-a3c3-1e5009bfb610" name="Default Changelist" comment="" />
+    <list default="true" id="93fe05c5-51a4-4820-a3c3-1e5009bfb610" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robotProgram/RobotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robotProgram/RobotController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robotProgram/entities/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robotProgram/entities/Robot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robotProgram/handlers/ValidationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robotProgram/handlers/ValidationHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/robotProgram/RobotController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/robotProgram/RobotController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/robotProgram/RobotController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/robotProgram/RobotController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/robotProgram/entities/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/robotProgram/entities/Robot.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +85,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CommandTest.getCommandFromCharTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="robotProgram.Main" />
       <module name="RobotProgrammingAssignment" />

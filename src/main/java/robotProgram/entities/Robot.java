@@ -41,6 +41,8 @@ public class Robot {
                 if (turn == Command.RIGHT) setDirection(NORTH);
                 else setDirection(SOUTH);
                 break;
+            default:
+                throw new IllegalArgumentException("Exception in robot turn method.");
         }
     }
 
@@ -62,7 +64,7 @@ public class Robot {
                 newX--;
                 break;
             default:
-                System.out.println("Problem in moveToNewPosition switch");
+                throw new IllegalArgumentException("Exception in robot try new position.");
         }
         return new int[]{newX, newY};
     }
@@ -73,7 +75,7 @@ public class Robot {
     }
 
     public String whereAmI() {
-        String robotStats = String.format("The robot ended up at %d %d and is facing %s.", getX(), getY(), getDirection());
+        String robotStats = String.format("Success! The robot ended up at %d %d and is facing %s.", getX(), getY(), getDirection());
         return robotStats;
     }
 
@@ -93,9 +95,7 @@ public class Robot {
         this.direction = direction;
     }
 
-    public void setX(int x) {
-        this.x = x;
-    }
+    public void setX(int x) { this.x = x; }
 
     public void setY(int y) {
         this.y = y;

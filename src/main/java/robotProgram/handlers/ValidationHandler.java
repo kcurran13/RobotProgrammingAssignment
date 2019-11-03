@@ -3,7 +3,6 @@ package robotProgram.handlers;
 import robotProgram.entities.Grid;
 import robotProgram.entities.Robot;
 import robotProgram.steering.CardinalDirection;
-
 import java.util.Arrays;
 
 public class ValidationHandler {
@@ -39,7 +38,7 @@ public class ValidationHandler {
         if (robotPos[0] < grid.getWidth() && robotPos[0] >= 0 && robotPos[1] < grid.getHeight() && robotPos[1] >= 0) {
             return true;
         } else {
-            System.out.println("Invalid position. Make sure the robot is positioned within the grid.");
+            System.out.println("Invalid position. The robot can't leave the grid.");
             return false;
         }
     }
