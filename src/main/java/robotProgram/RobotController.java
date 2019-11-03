@@ -3,6 +3,7 @@ package robotProgram;
 import robotProgram.entities.Grid;
 import robotProgram.entities.Robot;
 import robotProgram.handlers.InputHandler;
+import robotProgram.handlers.ValidationHandler;
 import robotProgram.steering.CardinalDirection;
 import robotProgram.steering.Command;
 
@@ -42,18 +43,13 @@ public class RobotController {
     }
 
     private void createGrid() {
-        int[] gridSize = null;
-
         System.out.println("\nSubmit room width and depth. Enter two numbers, separated by a space.");
         while (!gridExists) {
-            String[] userInput = InputHandler.handleGridInput(this.reader);
+            String[] userInput = InputHandler.handleInput(this.reader);
 
             if (userInput.length == 2) {
-                gridSize = Arrays.stream(userInput).filter(s -> s.matches("[\\d+]{1,9}")).mapToInt(Integer::parseInt).toArray();
-                if (gridSize.length != userInput.length) {
-                    System.out.println("Please try again using only numbers!");
-                } else {
-                    grid = new Grid(gridSize[0], gridSize[1]);
+                grid = ValidationHandler.validateGrid(userInput);
+                if (grid != null) {
                     gridExists = true;
                 }
             } else {
@@ -63,22 +59,22 @@ public class RobotController {
     }
 
     private void createRobot() {
-        int[] robotPosition = null;
-        Character direction = null;
+        Character direction;
 
         System.out.println("\nSubmit the robot's starting position, followed by the cardinal direction it should face - N, S, E, W. " +
                 "\nEnter two numbers and then the direction, for example 1 2 N, separated by a space.");
 
         while (!robotExists) {
-            String[] userInput = InputHandler.handleRobotInput(this.reader);
+            String[] userInput = InputHandler.handleInput(this.reader);
 
             if (userInput.length == 3) {
                 direction = Character.toUpperCase(userInput[2].charAt(0));
-                robotPosition = Arrays.stream(userInput).filter(s -> s.matches("[\\d+]{1,9}")).mapToInt(Integer::parseInt).toArray();
 
-                //check for valid direction
                 if (direction != null && CardinalDirection.getCardinalDirectionFromChar(direction) != null) {
-                    validateRobotStartPos(robotPosition, CardinalDirection.getCardinalDirectionFromChar(direction));
+                    robot = ValidationHandler.validateRobotPosition(userInput, CardinalDirection.getCardinalDirectionFromChar(direction), this.grid);
+                    if (robot != null) {
+                        robotExists = true;
+                    }
                 } else {
                     System.out.println("Invalid input. Please select N, S, E, or W.");
                 }
@@ -95,7 +91,7 @@ public class RobotController {
             // Add each character of user input as a value in an array
             char[] movementCommands = new char[0];
             try {
-                String input = this.reader.readLine().trim();
+                String input = this.reader.readLine().trim().toUpperCase();
                 movementCommands = input.toCharArray();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -103,7 +99,6 @@ public class RobotController {
 
             for (char input : movementCommands) {
                 unsuccessfulMove = false;
-                //validation of input
                 if (Command.getCommandFromChar(input) != null) {
                     switch (Command.getCommandFromChar(input)) {
                         case RIGHT:
@@ -114,7 +109,7 @@ public class RobotController {
                             break;
                         case FORWARD:
                             int[] newPosition = robot.tryNewPosition();
-                            if (checkValidNewPosition(newPosition)) {
+                            if (ValidationHandler.validateNewPosition(newPosition, this.grid)) {
                                 robot.moveToPosition(newPosition[0], newPosition[1]);
                             } else {
                                 System.out.println("The robot had an accident!");
@@ -134,24 +129,6 @@ public class RobotController {
                 System.out.println(robot.whereAmI());
                 robotMoving = false;
             }
-        }
-    }
-
-    private void validateRobotStartPos(int[] robotPosition, CardinalDirection direction) {
-        if (robotPosition[0] < grid.getWidth() && robotPosition[0] >= 0 && robotPosition[1] < grid.getHeight() && robotPosition[1] >= 0) {
-            robot = new Robot(robotPosition[0], robotPosition[1], direction);
-            robotExists = true;
-        } else {
-            System.out.println("Invalid position. Make sure the robot is positioned within the grid.");
-        }
-    }
-
-    private boolean checkValidNewPosition(int[] robotPos) {
-        if (robotPos[0] < grid.getWidth() && robotPos[0] >= 0 && robotPos[1] < grid.getHeight() && robotPos[1] >= 0) {
-            return true;
-        } else {
-            System.out.println("Invalid position. Make sure the robot is positioned within the grid.");
-            return false;
         }
     }
 }
