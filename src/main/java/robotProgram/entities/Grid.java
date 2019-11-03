@@ -7,7 +7,7 @@ public class Grid {
     public Grid(int width, int height) {
         this.width = width;
         this.height = height;
-        System.out.println("created grid: dimensions " + width + " " + height);
+        System.out.printf("Created a grid with dimensions %d x %d.\n", this.width, this.height);
     }
 
     public int getWidth() { return width; }

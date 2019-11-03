@@ -2,3 +2,5 @@
 *.kotlin_module
 
 *.class
+
+.idea/
