@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93fe05c5-51a4-4820-a3c3-1e5009bfb610" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/RobotTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/RobotTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/RobotTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/RobotTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/CommandTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CardinalDirectionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CardinalDirectionTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,7 +80,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RobotTest">
+  <component name="RunManager" selected="JUnit.CardinalDirectionTest.getCardinalDirectionFromShortCode">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="robotProgram.Main" />
       <module name="RobotProgrammingAssignment" />
@@ -91,6 +90,16 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="robot.Main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CardinalDirectionTest.getCardinalDirectionFromShortCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RobotProgrammingAssignment" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CardinalDirectionTest" />
+      <option name="METHOD_NAME" value="getCardinalDirectionFromShortCode" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -129,9 +138,11 @@
       <item itemvalue="JUnit.RobotTest.turnTest" />
       <item itemvalue="JUnit.RobotTest" />
       <item itemvalue="JUnit.RobotTest.tryNewPositionTest" />
+      <item itemvalue="JUnit.CardinalDirectionTest.getCardinalDirectionFromShortCode" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CardinalDirectionTest.getCardinalDirectionFromShortCode" />
         <item itemvalue="JUnit.RobotTest" />
         <item itemvalue="JUnit.RobotTest.tryNewPositionTest" />
         <item itemvalue="JUnit.RobotTest.turnTest" />
@@ -149,7 +160,7 @@
       <option name="presentableId" value="Default" />
       <updated>1572693493984</updated>
       <workItem from="1572693497052" duration="2742000" />
-      <workItem from="1572696252035" duration="23698000" />
+      <workItem from="1572696252035" duration="25015000" />
     </task>
     <servers />
   </component>
