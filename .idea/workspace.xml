@@ -80,7 +80,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CardinalDirectionTest.getCardinalDirectionFromShortCode">
+  <component name="RunManager" selected="JUnit.CommandTest.getCommandFromCharTest">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="robotProgram.Main" />
       <module name="RobotProgrammingAssignment" />
@@ -99,6 +99,16 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="CardinalDirectionTest" />
       <option name="METHOD_NAME" value="getCardinalDirectionFromShortCode" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommandTest.getCommandFromCharTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RobotProgrammingAssignment" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CommandTest" />
+      <option name="METHOD_NAME" value="getCommandFromCharTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -139,9 +149,11 @@
       <item itemvalue="JUnit.RobotTest" />
       <item itemvalue="JUnit.RobotTest.tryNewPositionTest" />
       <item itemvalue="JUnit.CardinalDirectionTest.getCardinalDirectionFromShortCode" />
+      <item itemvalue="JUnit.CommandTest.getCommandFromCharTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CommandTest.getCommandFromCharTest" />
         <item itemvalue="JUnit.CardinalDirectionTest.getCardinalDirectionFromShortCode" />
         <item itemvalue="JUnit.RobotTest" />
         <item itemvalue="JUnit.RobotTest.tryNewPositionTest" />

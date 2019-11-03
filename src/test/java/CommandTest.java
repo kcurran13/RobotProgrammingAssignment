@@ -1,15 +1,14 @@
 import org.junit.jupiter.api.Test;
-import robotProgram.steering.CardinalDirection;
+import robotProgram.steering.Command;
 
 import static org.junit.jupiter.api.Assertions.assertSame;
 
 public class CommandTest {
 
     @Test
-    public void getCardinalDirectionFromShortCode() {
-        assertSame(CardinalDirection.NORTH, CardinalDirection.getCardinalDirectionFromChar('N'));
-        assertSame(CardinalDirection.EAST, CardinalDirection.getCardinalDirectionFromChar('E'));
-        assertSame(CardinalDirection.SOUTH, CardinalDirection.getCardinalDirectionFromChar('S'));
-        assertSame(CardinalDirection.WEST, CardinalDirection.getCardinalDirectionFromChar('W'));
+    public void getCommandFromCharTest() {
+        assertSame(Command.RIGHT, Command.getCommandFromChar('R'));
+        assertSame(Command.LEFT, Command.getCommandFromChar('L'));
+        assertSame(Command.FORWARD, Command.getCommandFromChar('F'));
     }
 }
