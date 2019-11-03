@@ -46,7 +46,7 @@ public class RobotController {
 
         System.out.println("\nSubmit room width and depth. Enter two numbers, separated by a space.");
         while (!gridExists) {
-            String[] userInput = InputHandler.handleGridInput(this.reader);
+            String[] userInput = InputHandler.handleInput(this.reader);
 
             if (userInput.length == 2) {
                 gridSize = Arrays.stream(userInput).filter(s -> s.matches("[\\d+]{1,9}")).mapToInt(Integer::parseInt).toArray();
@@ -70,7 +70,7 @@ public class RobotController {
                 "\nEnter two numbers and then the direction, for example 1 2 N, separated by a space.");
 
         while (!robotExists) {
-            String[] userInput = InputHandler.handleRobotInput(this.reader);
+            String[] userInput = InputHandler.handleInput(this.reader);
 
             if (userInput.length == 3) {
                 direction = Character.toUpperCase(userInput[2].charAt(0));
