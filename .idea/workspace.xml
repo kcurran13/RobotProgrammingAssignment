@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="93fe05c5-51a4-4820-a3c3-1e5009bfb610" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robotProgram/handlers/ValidationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robotProgram/handlers/ValidationHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/RobotTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/RobotTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/RobotTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/RobotTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +81,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.RobotTest">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="robotProgram.Main" />
       <module name="RobotProgrammingAssignment" />
@@ -90,6 +91,25 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="robot.Main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RobotTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RobotProgrammingAssignment" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RobotTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RobotTest.tryNewPositionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RobotProgrammingAssignment" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RobotTest" />
+      <option name="METHOD_NAME" value="tryNewPositionTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -107,9 +127,13 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.RobotTest.turnTest" />
+      <item itemvalue="JUnit.RobotTest" />
+      <item itemvalue="JUnit.RobotTest.tryNewPositionTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RobotTest" />
+        <item itemvalue="JUnit.RobotTest.tryNewPositionTest" />
         <item itemvalue="JUnit.RobotTest.turnTest" />
       </list>
     </recent_temporary>
@@ -125,7 +149,7 @@
       <option name="presentableId" value="Default" />
       <updated>1572693493984</updated>
       <workItem from="1572693497052" duration="2742000" />
-      <workItem from="1572696252035" duration="22918000" />
+      <workItem from="1572696252035" duration="23698000" />
     </task>
     <servers />
   </component>
