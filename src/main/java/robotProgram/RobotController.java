@@ -102,6 +102,41 @@ public class RobotController {
 
     private void moveRobot() {
         System.out.println("ready to move!");
-  
+        System.out.println("\nTime to move the robot! Enter R to turn right, L to turn left, or F to move forward.");
+
+        // Adds each character of the input as a value in an array
+        char[] movementCommands = new char[0];
+        try {
+            String input = this.reader.readLine().trim();
+            movementCommands = input.toCharArray();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        for (char input : movementCommands) {
+            //validation of input
+            if (Command.getCommandFromChar(input) != null) {
+                switch (Command.getCommandFromChar(input)) {
+                    case RIGHT:
+                        robot.turn(Command.RIGHT);
+                        break;
+                    case LEFT:
+                        robot.turn(Command.LEFT);
+                        break;
+                    case FORWARD:
+                        int[] newPosition = robot.tryNewPosition();
+                        if (checkValidNewPosition(newPosition)) {
+                            robot.moveToPosition(newPosition[0], newPosition[1]);
+                        } else {
+                            System.out.println("The robot had an accident!");
+                        }
+                        break;
+                    default:
+                        System.out.println("default, what to do?");
+                }
+            } else {
+                System.out.printf("Invalid input.");
+            }
+        }
     }
 }
