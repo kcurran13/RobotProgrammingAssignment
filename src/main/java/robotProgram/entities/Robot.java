@@ -41,6 +41,8 @@ public class Robot {
                 if (turn == Command.RIGHT) setDirection(NORTH);
                 else setDirection(SOUTH);
                 break;
+            default:
+                throw new IllegalArgumentException("Exception in robot turn method.");
         }
     }
 
@@ -62,7 +64,7 @@ public class Robot {
                 newX--;
                 break;
             default:
-                System.out.println("Problem in moveToNewPosition switch");
+                throw new IllegalArgumentException("Exception in robot try new position.");
         }
         return new int[]{newX, newY};
     }
