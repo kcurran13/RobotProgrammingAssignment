@@ -46,6 +46,9 @@ public class Robot {
         }
     }
 
+    /**
+     * Method assigns new x and y coordinates, then returns them for validation.
+     * */
     public int[] tryNewPosition() {
         int newX = getX();
         int newY = getY();

@@ -57,6 +57,10 @@ public class RobotController {
         }
     }
 
+    /**
+     * Get user input for robot and validate it - validation of direction si done here and coordinates are done in validationHandler
+     * Direction - take item 3 in the array and check that it is a valid direction, else prompt the user for new input.
+     */
     private void createRobot() {
         Character direction;
 
@@ -83,6 +87,9 @@ public class RobotController {
         }
     }
 
+    /**
+     *
+     */
     private void moveRobot() {
         while (!hasRobotMoved) {
             System.out.println("\nTime to move the robot! Enter R to turn right, L to turn left, or F to move forward.");
@@ -124,7 +131,7 @@ public class RobotController {
             }
             if (!isUnsuccessfulMove) {
                 System.out.println(robot.whereAmI());
-                hasRobotMoved = true;
+                 hasRobotMoved = true;
             }
         }
     }

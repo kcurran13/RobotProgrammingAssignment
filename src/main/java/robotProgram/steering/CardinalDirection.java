@@ -9,8 +9,8 @@ public enum CardinalDirection {
     EAST('E'),
     WEST('W');
 
-    private static final Map<Character, CardinalDirection> CODE = new HashMap<>();
     private final char shortCode;
+    private static final Map<Character, CardinalDirection> CODE = new HashMap<>();
 
     CardinalDirection(char shortCode) {
         this.shortCode = shortCode;
